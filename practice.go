@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 //func main() {
@@ -53,3 +54,12 @@ func main() {
 func Routine(id int) {
 	for count := 0; count < 2; count++ {
 		Lock.Lock()
+		value := Counter
+		time.Sleep(1 * time.Nanosecond)
+		value++
+		Counter = value
+
+		Lock.Unlock()
+	}
+	Wait.Done()
+}
