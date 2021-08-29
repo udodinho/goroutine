@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sync"
 	"time"
 )
 
@@ -36,30 +35,42 @@ import (
 //}
 
 
-var Wait sync.WaitGroup
-var Counter  = 0
-var Lock sync.Mutex
+//var Wait sync.WaitGroup
+//var Counter  = 0
+//var Lock sync.Mutex
+//
+//func main() {
+//	for routine := 1; routine <= 2; routine++ {
+//		Wait.Add(1)
+//		go Routine(routine)
+//
+//	}
+//	Wait.Wait()
+//	fmt.Printf("Final counter: %d\n", Counter)
+//
+//}
+//
+//func Routine(id int) {
+//	for count := 0; count < 2; count++ {
+//		Lock.Lock()
+//		value := Counter
+//		time.Sleep(1 * time.Nanosecond)
+//		value++
+//		Counter = value
+//
+//		Lock.Unlock()
+//	}
+//	Wait.Done()
+//}
 
-func main() {
-	for routine := 1; routine <= 2; routine++ {
-		Wait.Add(1)
-		go Routine(routine)
 
-	}
-	Wait.Wait()
-	fmt.Printf("Final counter: %d\n", Counter)
-
+type Ball struct {
+	hits int
 }
+func main() {
+	table := make(chan *Ball)
+	go Player("Ping", table)
+	go Player("Pong", table)
 
-func Routine(id int) {
-	for count := 0; count < 2; count++ {
-		Lock.Lock()
-		value := Counter
-		time.Sleep(1 * time.Nanosecond)
-		value++
-		Counter = value
 
-		Lock.Unlock()
-	}
-	Wait.Done()
 }
