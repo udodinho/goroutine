@@ -20,4 +20,7 @@ func main() {
 			fmt.Printf("%c ", char)
 		}
 	}()
+
+
+
 }
