@@ -72,5 +72,8 @@ func main() {
 	go Player("Ping", table)
 	go Player("Pong", table)
 
-
+	table <- new(Ball)
+	time.Sleep(1 * time.Second)
+	<- table
 }
+
