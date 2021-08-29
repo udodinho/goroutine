@@ -1,6 +1,9 @@
 package main
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 //func main() {
 //	runtime.GOMAXPROCS(2)
@@ -42,3 +45,7 @@ func main() {
 		go Routine(routine)
 
 	}
+	Wait.Wait()
+	fmt.Printf("Final counter: %d\n", Counter)
+
+}
