@@ -49,3 +49,7 @@ func main() {
 	fmt.Printf("Final counter: %d\n", Counter)
 
 }
+
+func Routine(id int) {
+	for count := 0; count < 2; count++ {
+		Lock.Lock()
