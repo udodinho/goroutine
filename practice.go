@@ -81,5 +81,8 @@ func Player(name string, table chan *Ball) {
 	for {
 		ball := <- table
 		ball.hits++
-
+		fmt.Println(name, ball.hits)
+		time.Sleep(100 * time.Millisecond)
+		table <- ball
+	}
 }
