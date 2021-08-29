@@ -30,5 +30,8 @@ func main() {
 				}
 
 			}()
+	fmt.Println("Waiting To Finish")
+		wg.Wait()
+		fmt.Println("\nTerminating Program")
 
 }
