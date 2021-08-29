@@ -36,3 +36,9 @@ var Wait sync.WaitGroup
 var Counter  = 0
 var Lock sync.Mutex
 
+func main() {
+	for routine := 1; routine <= 2; routine++ {
+		Wait.Add(1)
+		go Routine(routine)
+
+	}
