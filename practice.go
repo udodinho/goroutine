@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
+	"time"
 )
 
 func main() {
@@ -21,6 +22,13 @@ func main() {
 		}
 	}()
 
+	go func() {
+				defer  wg.Done()
+				time.Sleep(1 * time.Microsecond)
+				for number := 1; number < 27; number++ {
+					fmt.Printf("%d ", number)
+				}
 
+			}()
 
 }
