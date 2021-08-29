@@ -77,3 +77,9 @@ func main() {
 	<- table
 }
 
+func Player(name string, table chan *Ball) {
+	for {
+		ball := <- table
+		ball.hits++
+
+}
