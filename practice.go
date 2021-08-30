@@ -1,9 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "time"
 
 //func main() {
 //	runtime.GOMAXPROCS(2)
@@ -64,25 +61,38 @@ import (
 //}
 
 
-type Ball struct {
-	hits int
-}
-func main() {
-	table := make(chan *Ball)
-	go Player("Ping", table)
-	go Player("Pong", table)
+//type Ball struct {
+//	hits int
+//}
+//func main() {
+//	table := make(chan *Ball)
+//	go Player("Ping", table)
+//	go Player("Pong", table)
+//
+//	table <- new(Ball)
+//	time.Sleep(1 * time.Second)
+//	<- table
+//}
+//
+//func Player(name string, table chan *Ball) {
+//	for {
+//		ball := <- table
+//		ball.hits++
+//		fmt.Println(name, ball.hits)
+//		time.Sleep(100 * time.Millisecond)
+//		table <- ball
+//	}
+//}
 
-	table <- new(Ball)
+// Channels
+
+
+func waitForTask() {
+	ch := make(chan string)
+
+	go func() {
+	p := <- ch
+	}()
 	time.Sleep(1 * time.Second)
-	<- table
-}
-
-func Player(name string, table chan *Ball) {
-	for {
-		ball := <- table
-		ball.hits++
-		fmt.Println(name, ball.hits)
-		time.Sleep(100 * time.Millisecond)
-		table <- ball
-	}
+	ch <- "paper"
 }
