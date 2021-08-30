@@ -91,8 +91,8 @@ func waitForTask() {
 	ch := make(chan string)
 
 	go func() {
+	time.Sleep(1 * time.Second)
 	p := <- ch
 	}()
-	time.Sleep(1 * time.Second)
 	ch <- "paper"
 }
