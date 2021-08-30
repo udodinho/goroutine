@@ -92,7 +92,7 @@ func waitForTask() {
 
 	go func() {
 	time.Sleep(1 * time.Second)
-	p := <- ch
-	}()
 	ch <- "paper"
+	}()
+	p := <- ch
 }
