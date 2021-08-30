@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 )
@@ -101,11 +102,19 @@ func waitForTask() {
 }
 
 func fanOut() {
-	     emps := 20
-	     ch := make(chan string, emps)
+	emps := 20
+	ch := make(chan string, emps)
 
-	    for e := 0; e < emps; e++ {
-	         go func() {
-	           time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond)
-	            ch <- "paper"
-	         }()
+	for e := 0; e < emps; e++ {
+		go func() {
+			time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond)
+			ch <- "paper"
+		}()
+
+		for emps > 0 {
+			p := <-ch
+			fmt.Println(p)
+			emps--
+		}
+	}
+}
