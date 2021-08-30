@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"math/rand"
+	"time"
+)
 
 //func main() {
 //	runtime.GOMAXPROCS(2)
@@ -96,3 +99,13 @@ func waitForTask() {
 	}()
 	p := <- ch
 }
+
+func fanOut() {
+	     emps := 20
+	     ch := make(chan string, emps)
+
+	    for e := 0; e < emps; e++ {
+	         go func() {
+	           time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond)
+	            ch <- "paper"
+	         }()
