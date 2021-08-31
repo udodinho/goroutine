@@ -99,6 +99,7 @@ func waitForTask() {
 	ch <- "paper"
 	}()
 	p := <- ch
+	fmt.Println(p)
 }
 
 func fanOut() {
