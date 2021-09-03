@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"time"
 )
 
@@ -91,31 +90,35 @@ import (
 // Channels
 
 
-func waitForTask() {
-	ch := make(chan string)
+//func waitForTask() {
+//	ch := make(chan string)
+//
+//	go func() {
+//	time.Sleep(1 * time.Second)
+//	ch <- "paper"
+//	}()
+//	p := <- ch
+//	fmt.Println(p)
+//}
+//
+//func fanOut() {
+//	emps := 20
+//	ch := make(chan string, emps)
+//
+//	for e := 0; e < emps; e++ {
+//		go func() {
+//			time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond)
+//			ch <- "paper"
+//		}()
+//
+//		for emps > 0 {
+//			p := <-ch
+//			fmt.Println(p)
+//			emps--
+//		}
+//	}
+//}
 
-	go func() {
-	time.Sleep(1 * time.Second)
-	ch <- "paper"
-	}()
-	p := <- ch
-	fmt.Println(p)
-}
-
-func fanOut() {
-	emps := 20
-	ch := make(chan string, emps)
-
-	for e := 0; e < emps; e++ {
-		go func() {
-			time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond)
-			ch <- "paper"
-		}()
-
-		for emps > 0 {
-			p := <-ch
-			fmt.Println(p)
-			emps--
-		}
-	}
-}
+func main() {
+	fmt.Println("In main()")
+	go longWait()
