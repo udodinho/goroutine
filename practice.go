@@ -132,3 +132,6 @@ func main() {
 func longWait() {
 	fmt.Println("Beginning longWait()")
 	time.Sleep(5 * 1e9)
+	fmt.Println("End of longWait()")
+}
+
