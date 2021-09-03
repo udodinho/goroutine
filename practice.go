@@ -129,3 +129,5 @@ func main() {
 
 }
 
+func longWait() {
+	fmt.Println("Beginning longWait()")
