@@ -122,3 +122,6 @@ import (
 func main() {
 	fmt.Println("In main()")
 	go longWait()
+	go shortWait()
+	fmt.Println("About to sleep in main()")
+	time.Sleep(10 * 1e9)
