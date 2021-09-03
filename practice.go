@@ -135,3 +135,5 @@ func longWait() {
 	fmt.Println("End of longWait()")
 }
 
+func shortWait() {
+	fmt.Println("Beginning of shortWait()")
