@@ -127,12 +127,10 @@ func main() {
 
 }
 
-//func longWait() {
-//	fmt.Println("Beginning longWait()")
-//	time.Sleep(5 * 1e9)
-//	fmt.Println("End of longWait()")
-//}
-//
+func sendData(ch chan string) {
+
+}
+
 //func shortWait() {
 //	fmt.Println("Beginning of shortWait()")
 //	time.Sleep(2 * 1e9)
