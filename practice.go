@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"time"
 )
 
@@ -135,6 +134,6 @@ func sendData(ch chan string) {
 	ch <- "Tokyo"
 }
 
-func getData() {
+func getData(ch chan string) {
 
 }
