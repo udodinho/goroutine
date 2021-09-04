@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
 //func main() {
 //	runtime.GOMAXPROCS(2)
 //
@@ -119,27 +114,31 @@ import (
 //	}
 //}
 
+//func main() {
+//	ch := make(chan string)
+//	go sendData(ch)
+//	go getData(ch)
+//	time.Sleep(1e9)
+//
+//}
+//
+//func sendData(ch chan string) {
+//	ch <- "Washington"
+//	ch <- "London"
+//	ch <- "Tripoli"
+//	ch <- "Beijing"
+//	ch <- "Tokyo"
+//}
+//
+//func getData(ch chan string) {
+//var input string
+//for {
+//	input= <- ch
+//	fmt.Printf("%s\n", input)
+//	}
+//	close(ch)
+//}
+
 func main() {
-	ch := make(chan string)
-	go sendData(ch)
-	go getData(ch)
-	time.Sleep(1e9)
-
-}
-
-func sendData(ch chan string) {
-	ch <- "Washington"
-	ch <- "London"
-	ch <- "Tripoli"
-	ch <- "Beijing"
-	ch <- "Tokyo"
-}
-
-func getData(ch chan string) {
-var input string
-for {
-	input= <- ch
-	fmt.Printf("%s", input)
-	}
-	close(ch)
+	ch := make(chan int)
 }
