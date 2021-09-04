@@ -128,7 +128,7 @@ func main() {
 }
 
 func sendData(ch chan string) {
-
+	ch <- "Washington"
 }
 
 //func shortWait() {
