@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -138,5 +139,6 @@ func getData(ch chan string) {
 var input string
 for {
 	input= <- ch
+	fmt.Printf()
 }
 }
