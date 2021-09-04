@@ -122,10 +122,8 @@ import (
 func main() {
 	fmt.Println("In main()")
 	go sendData(ch)
-	go getData()
-	fmt.Println("About to sleep in main()")
-	time.Sleep(10 * 1e9)
-	fmt.Println("At the end of main")
+	go getData(ch)
+	time.Sleep(1e9)
 
 }
 
