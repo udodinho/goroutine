@@ -151,3 +151,9 @@ func main() {
 	time.Sleep(1e9)
 }
 
+func pump(ch chan int) {
+	for i := 0; ; i++ {
+		ch <- i
+	}
+}
+
