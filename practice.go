@@ -120,7 +120,7 @@ import (
 //}
 
 func main() {
-	fmt.Println("In main()")
+	ch := make(chan string)
 	go sendData(ch)
 	go getData(ch)
 	time.Sleep(1e9)
