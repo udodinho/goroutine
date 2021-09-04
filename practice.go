@@ -121,7 +121,7 @@ import (
 
 func main() {
 	fmt.Println("In main()")
-	go longWait()
+	go sendData(ch)
 	go shortWait()
 	fmt.Println("About to sleep in main()")
 	time.Sleep(10 * 1e9)
@@ -129,14 +129,14 @@ func main() {
 
 }
 
-func longWait() {
-	fmt.Println("Beginning longWait()")
-	time.Sleep(5 * 1e9)
-	fmt.Println("End of longWait()")
-}
-
-func shortWait() {
-	fmt.Println("Beginning of shortWait()")
-	time.Sleep(2 * 1e9)
-	fmt.Println("End of shortWait()")
-}
+//func longWait() {
+//	fmt.Println("Beginning longWait()")
+//	time.Sleep(5 * 1e9)
+//	fmt.Println("End of longWait()")
+//}
+//
+//func shortWait() {
+//	fmt.Println("Beginning of shortWait()")
+//	time.Sleep(2 * 1e9)
+//	fmt.Println("End of shortWait()")
+//}
