@@ -140,5 +140,6 @@ var input string
 for {
 	input= <- ch
 	fmt.Printf("%s", input)
-}
+	}
+	close(ch)
 }
