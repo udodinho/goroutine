@@ -135,8 +135,6 @@ func sendData(ch chan string) {
 	ch <- "Tokyo"
 }
 
-//func shortWait() {
-//	fmt.Println("Beginning of shortWait()")
-//	time.Sleep(2 * 1e9)
-//	fmt.Println("End of shortWait()")
-//}
+func getData() {
+
+}
