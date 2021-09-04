@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 //func main() {
 //	runtime.GOMAXPROCS(2)
 //
@@ -140,5 +145,9 @@ package main
 //}
 
 func main() {
-	ch := make(chan int)
+	ch1 := make(chan int)
+	go pump(ch1)
+	go suck(ch1)
+	time.Sleep(1e9)
 }
+
