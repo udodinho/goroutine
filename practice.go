@@ -135,5 +135,6 @@ func sendData(ch chan string) {
 }
 
 func getData(ch chan string) {
+var input string
 
 }
