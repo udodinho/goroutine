@@ -157,3 +157,8 @@ func pump(ch chan int) {
 	}
 }
 
+func suck(ch chan  int) {
+	for {
+		fmt.Println(<- ch)
+	}
+}
