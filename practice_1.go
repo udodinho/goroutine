@@ -1,6 +1,9 @@
 package main
 
+import "fmt"
 
+
+// Using Semaphore method
 func main() {
 	ch := make(chan int)
 	done := make(chan bool)
@@ -26,6 +29,6 @@ func main() {
 	}()
 
 	for n := range ch {
-
+		fmt.Println(n)
 	}
 }
