@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sync"
 )
 
@@ -192,7 +193,7 @@ func main() {
 	}()
 
 	for n := range ch {
-
+	fmt.Println(n)
 	}
 
 }
