@@ -173,6 +173,10 @@ func main() {
 
 	wg.Add(2)
 
-	go func() {}()
+	go func() {
+		for i := 0; i < 10; i++ {
+			
+		}
+	}()
 
 }
