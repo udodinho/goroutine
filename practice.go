@@ -171,4 +171,4 @@ var wg sync.WaitGroup
 func main() {
 	ch := make(chan int)
 
-
+	wg.Add(2)
