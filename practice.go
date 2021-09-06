@@ -176,6 +176,9 @@ func main() {
 		for i := 0; i < 10; i++ {
 			ch <- i
 		}
+		wg.Done()
 	}()
+
+	go func() {}()
 
 }
