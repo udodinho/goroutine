@@ -191,4 +191,8 @@ func main() {
 	close(ch)
 	}()
 
+	for n := range ch {
+
+	}
+
 }
