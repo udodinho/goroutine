@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"time"
+	"sync"
 )
 
 //func main() {
@@ -144,21 +143,27 @@ import (
 //	close(ch)
 //}
 
-func main() {
-	ch1 := make(chan int)
-	go pump(ch1)
-	go suck(ch1)
-	time.Sleep(1e9)
-}
+//func main() {
+//	ch1 := make(chan int)
+//	go pump(ch1)
+//	go suck(ch1)
+//	time.Sleep(1e9)
+//}
+//
+//func pump(ch chan int) {
+//	for i := 0; ; i++ {
+//		ch <- i
+//	}
+//}
+//
+//func suck(ch chan  int) {
+//	for {
+//		fmt.Println(<- ch)
+//	}
+//}
 
-func pump(ch chan int) {
-	for i := 0; ; i++ {
-		ch <- i
-	}
-}
+// Using range and close  method in channels
 
-func suck(ch chan  int) {
-	for {
-		fmt.Println(<- ch)
-	}
-}
+
+var wg sync.WaitGroup
+
