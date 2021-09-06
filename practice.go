@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sync"
 )
 
@@ -166,4 +167,8 @@ import (
 
 
 var wg sync.WaitGroup
+
+func main() {
+	ch := make(chan int)
+
 
