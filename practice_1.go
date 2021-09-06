@@ -9,5 +9,8 @@ func main() {
 		for i := 0; i < 10; i++ {
 			ch <- i
 		}
+		done <- true
 	}()
+
+	go func() {}()
 }
