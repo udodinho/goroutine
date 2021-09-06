@@ -172,3 +172,7 @@ func main() {
 	ch := make(chan int)
 
 	wg.Add(2)
+
+	go func() {}()
+
+}
