@@ -19,5 +19,13 @@ func main() {
 		done <- true
 	}()
 
-	go func() {}()
+	go func() {
+		<- done
+		<- done
+		close(ch)
+	}()
+
+	for n := range ch {
+
+	}
 }
