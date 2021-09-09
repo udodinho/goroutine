@@ -16,5 +16,8 @@ func main() {
 	go speak()
 	fmt.Println("CPU middle",runtime.NumCPU())
 	fmt.Println("GOROUTINE middle",runtime.NumGoroutine())
-
+	wg.Wait()
+	fmt.Println("CPU end",runtime.NumCPU())
+	fmt.Println("GOROUTINE end",runtime.NumGoroutine())
 }
+
