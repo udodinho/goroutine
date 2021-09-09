@@ -14,3 +14,7 @@ func main() {
 	wg.Add(2)
 	go hear()
 	go speak()
+	fmt.Println("CPU middle",runtime.NumCPU())
+	fmt.Println("GOROUTINE middle",runtime.NumGoroutine())
+
+}
