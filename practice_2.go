@@ -26,3 +26,5 @@ func speak()  {
 	wg.Done()
 }
 
+func hear()  {
+	fmt.Println("Yes am here!")
