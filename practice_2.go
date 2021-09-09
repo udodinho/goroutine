@@ -21,3 +21,5 @@ func main() {
 	fmt.Println("GOROUTINE end",runtime.NumGoroutine())
 }
 
+func speak()  {
+	fmt.Println("Hello you are there?")
