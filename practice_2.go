@@ -23,3 +23,6 @@ func main() {
 
 func speak()  {
 	fmt.Println("Hello you are there?")
+	wg.Done()
+}
+
